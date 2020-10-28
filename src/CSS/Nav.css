@@ -1,0 +1,233 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 790px){
+    nav
+    {
+        height: fit-content;
+        background-color: white;
+        border-top: 6px solid orange;
+        border-bottom: 1px solid black;
+        visibility: visible !important;
+        margin: 0 !important;
+    }
+
+    nav ul 
+    {
+        list-style: none;  
+        display: flex;
+        width: 80%;
+        margin: 0px auto;
+        justify-content: space-evenly;
+        position: relative;
+    }
+
+    nav ul li 
+    {
+        width: 20%;
+        padding: 0px 5px;
+    }
+
+    nav ul li a
+    {
+        text-decoration: none;
+        color: black;
+        font-family: 'ABeeZee', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        padding: 15px 10px;
+        transition: 0.5s;
+    }
+
+    nav ul li a:hover
+    {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav a .fa 
+    {
+        margin-left: 10px;
+    }
+
+    nav .sub-menu1,  nav a .fas, .hide
+    {
+        display: none;
+    }
+
+    nav ul li:hover .sub-menu1
+    {
+        display: block;
+        position: absolute;
+        top: 50;
+        background-color: white;
+        opacity: 0.9;
+        padding:0px;
+        border: 1px solid black;
+        border-top: 5px solid orange;
+    }
+
+    nav ul li:hover .sub-menu1 ul
+    {
+        display: block;
+        margin: 10px;
+        
+    }
+
+    nav ul li:hover .sub-menu1 ul li
+    {
+        width: 215px;
+        border-bottom: 1px dotted black;
+        text-align: center;
+
+    }
+
+    nav ul li:hover .sub-menu1 ul li a 
+    {
+        padding: 10px;
+        background: transparent;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    nav ul li:hover .sub-menu1 ul li:last-child
+    {
+        border-bottom: none;
+    }
+
+    nav ul li:hover .sub-menu1 ul li a:hover
+    {
+        color: orange;
+    }
+
+    nav #accountInfo{
+        display: none;
+    }
+}
+
+@media (max-width: 970px){
+    nav ul li a
+    {
+        font-size: 15px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 790px){
+    nav #accountInfo{
+        display: block;
+        text-decoration: none;
+        color: black;
+        font-family: 'ABeeZee', sans-serif;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+
+    nav{
+        width: 70%;
+        position: absolute;
+        top: 80.7px;
+        height: calc(100vh - 80.6px);
+        overflow: scroll;
+        overflow-x: hidden;
+        background-color: white;
+        padding: 10px 10px;
+        z-index: 6;
+        visibility: visible;
+        left: -70%;
+        transition: 0.5s linear;
+    }
+
+    nav .close{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav .close .fas{
+        font-size: 35px;
+        text-align: right;
+        font-weight: light;
+        color: black;
+        transition: all 1s ease-in-out;
+    }
+    
+    nav .close .fas:hover{
+        color: orange;
+        cursor: pointer;
+        transform: rotate(360deg);
+    }
+
+    nav .main__ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    nav ul li 
+    {
+        width: 100%;
+        list-style: none;
+    }
+
+    nav ul li a
+    {
+        text-decoration: none;
+        color: black;
+        font-family: 'ABeeZee', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    nav .nav__a{
+        display: flex;
+        font-size: 25px;
+        background-color: orange;
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0px;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav .nav__a:hover{
+        cursor: auto;
+    }
+
+    nav ul li a:hover{
+        cursor: pointer;
+    }
+
+    nav .sub-menu1{
+        margin-left: 10px;
+    }
+
+    nav .sub-menu1 a{
+        font-size: 18px;
+    }
+
+    nav .sub-menu1 a:hover{
+        color: orange;
+    }
+
+    nav .sub-menu1 li{
+        margin-bottom: 10px;
+    }
+
+    
+
+    nav .nav__a i{
+        display: none;
+    }
+
+    nav .fas{
+        margin-right: 10px;
+        width: 25px;
+    }
+}

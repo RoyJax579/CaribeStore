@@ -1,0 +1,36 @@
+
+/*Header style*/
+.header2
+{
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+    border-bottom: 5px solid orange;
+    
+}
+
+.header2 .Logo a
+{
+    color: black;
+    text-decoration: none;
+    font-family: 'Maiden Orange', cursive;
+    font-size: 35px;
+    letter-spacing: 7px;
+    
+}
+
+.header2 .Logo
+{
+   display: block;  
+   padding: 20px 0; 
+}
+
+.header2 span
+{
+    color: orange;
+    font-size: 55px;
+    font-family: 'Dancing Script', cursive;
+    font-style: oblique;
+    font-weight: bolder;
+}

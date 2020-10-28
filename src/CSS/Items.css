@@ -1,0 +1,146 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.items_body{
+    background-color: #f5f5f5;
+    padding: 30px 20px;
+}
+
+.linkText{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.linkText{
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(233, 153, 4);
+}
+
+.linkText span{
+    font-size: 26px;
+    color: darkgray;
+    padding: 0 10px;
+}
+
+.linkText a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.linkText a:hover{
+    color: orange;
+    transition: 0.5s;
+}
+
+/*Header*/
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0 30px;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 5px double #000;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+
+/* Select Style */
+#sort_select{
+    height: 30px;
+    font-size: 16px;
+    padding: 0 5px;
+    margin-bottom: 20px;
+}
+
+
+.items{
+    /* padding: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+.card{
+    width: 24.6%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 2px;
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.card p{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 0;
+    min-height: 140px;
+}
+
+.card .innerBox{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 20px;
+}
+
+.dropdown label{
+    font-weight: bolder;
+}
+
+.dropdown select{
+    border: none;
+    border-bottom: 2px solid orange;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.card button{
+    font-weight: bolder;
+    margin: 0px auto;
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+}
+
+.card button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 1240px){
+    .card
+    {
+        width: 32.5%;
+    }
+}
+
+@media (max-width: 860px){
+    .card
+    {
+        width: 49%;
+    }
+}
+
+@media (max-width:600px){
+    .card
+    {
+        width: 100%;
+    }
+}
+

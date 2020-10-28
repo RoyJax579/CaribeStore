@@ -1,0 +1,257 @@
+.cart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart .top__hr{
+    display: none;
+}
+
+.cart__items{
+    width: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart__item{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+    margin-bottom: 30px;
+}
+
+.cart__item:last-child{
+    margin-bottom: 0px;
+}
+
+.cart__item p{
+    color: orange;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.cart__item img{
+    width: 200px;
+    height: 200px;
+}
+
+.cart__container{
+    padding: 50px;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 261px);
+}
+
+#price__resp{
+    display: none;
+}
+
+.inner__cart{
+    padding: 0 20px;
+    width: 70%;
+}
+
+.inner__cart h1{
+    font-size: 20px;
+    height: 150px;
+}
+
+.inner__cart .fas{
+    padding-right: 10px;
+}
+
+.update__btn, .delete__btn {
+    background-color: white;
+    border: 2px solid orange;
+    /* border-radius: 10px; */
+    padding: 5px 10px;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.delete__btn {
+    border: 2px solid red;
+}
+
+.update__btn:hover{
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+.delete__btn:hover{
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+
+.update select{
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 2px solid orange;
+    margin: 0 20px 10px 0;
+    font-size: 14px;
+
+}
+
+.Empty
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+.cart ul{
+    margin-top: 10px;
+}
+
+.cart ul li
+{
+    list-style: none;
+}
+
+.cart ul li a
+{
+    text-decoration: none;
+    color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.cart ul li a:hover
+{
+    text-decoration: underline;
+}
+
+/*Side Bar*/
+.side__bar{
+    background-color: white;
+    height: 250px;
+    width: 29%;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.side__bar h1{
+    font-size: 30px;
+    border-bottom: 3px solid orange;
+    padding: 20px 0;
+}
+
+.side__bar h1 span{
+    color: orange;
+    font-size: 27px;
+}
+
+.side__bar button{
+    background-color: white;
+    display: flex;
+    margin: 30px auto 0 auto;
+    padding: 10px 30px;
+    font-weight: bolder;
+    font-size: 20px;
+    border: 3px dashed orange;
+}
+
+.side__bar button:hover{
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1020px){
+    body{
+        overflow: auto;
+    }
+
+    .cart__container{
+        padding: 20px;
+    }
+    
+    .cart{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .cart .top__hr{
+        display: block;
+        margin: 30px 50px;
+        background-color: transparent;
+        border: none;
+        border-top: 2px solid black;
+        border-bottom: 2px solid orange;
+        height: 5px;
+    }
+
+    .cart__items{
+        width: 100%;
+    }
+
+    .cart__item img{
+        max-width: 200px;
+        height: 200px;
+    }
+
+    .side__bar{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .cart__item p{
+        font-size: 19px;
+        font-weight: bolder;
+    }
+
+    .cart__item{
+        height: fit-content;
+    }
+
+    .inner__cart h1{
+        font-size: 16.5px;
+        height: 130px;
+        overflow-y: scroll;
+    }
+
+
+}
+
+@media (max-width: 527px){
+    .cart__item{
+        flex-direction: column;
+    }
+
+    .cart__item img{
+        margin: 0 auto;
+        max-width: 150px;
+        width: auto;
+        height: auto;
+
+    }
+
+    #price__main{
+        display: none;
+    }
+
+    #price__resp{
+        display: block;
+        margin: 10px 0;
+    }
+
+    .inner__cart{
+        width: 100%;
+        padding: 5px;
+    }
+
+    .inner__cart h1{
+        font-weight: 550;
+        font-size: 15px;
+        display: flex;
+    }
+
+
+}

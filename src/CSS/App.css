@@ -1,0 +1,18 @@
+
+#blur{
+    background-color: rgba(30, 36, 61, 0.63);
+    top: 80.6px;
+    height: calc(100vh - 80.6px);
+    width: 100vw;
+    position: absolute;
+    z-index: 5;
+    display: none;
+}
+
+
+#content{
+    min-height: calc(100vh - 240px);
+    max-width: 100%;
+    width: 1320px;
+    margin: 0px auto;
+}

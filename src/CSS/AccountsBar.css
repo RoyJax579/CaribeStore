@@ -1,0 +1,80 @@
+@media (min-width: 790px){
+    .accounts{
+        width: 320px;
+        position: absolute;
+        top: 80.7px;
+        right: -320px;
+        height: calc(100vh - 80.6px);
+        overflow: hidden;
+        background-color: white;
+        padding: 10px 10px;
+        z-index: 6;
+        visibility: visible;
+        transition: 1s ease;
+        
+    }
+
+    .accounts h1{
+        display: flex;
+        font-size: 30px;
+        background-color: orange;
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0px 0;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .accounts a{
+        display: block;
+        text-decoration: none;
+        color: black;
+        font-family: 'ABeeZee', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        /* text-align: center; */
+        padding: 10px;
+        /* border-bottom: 4px dotted black; */
+    }
+
+    .accounts #accountInfo{
+        display: block;
+        text-decoration: none;
+        color: black;
+        font-family: 'ABeeZee', sans-serif;
+        font-weight: lighter;
+        font-size: 20px;
+        /* text-align: center; */
+        padding: 10px;
+    }
+
+    .accounts a:hover{
+        color: orange;
+        transition: 0.3s;
+    }
+
+    .accounts .close{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .accounts .close .fas{
+        font-size: 35px;
+        text-align: right;
+        font-weight: light;
+        color: black;
+        transition: all 1s ease-in-out;
+    }
+    
+    .accounts .close .fas:hover{
+        color: orange;
+        cursor: pointer;
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 790px){
+    .accounts{
+        display: none;
+    }
+}

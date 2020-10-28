@@ -1,0 +1,272 @@
+body{
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.img_bar{
+    height: auto;
+    max-width: 100%;
+    width: 1320px;
+    margin: 0px auto;
+}
+
+.img_bar
+{
+    background-image: url("../Images/Open-Sign1.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 50px;
+}
+
+.img_bar h3
+{
+    font-size: 30px; 
+    color:orange;
+}
+
+.img_bar h1, h3
+{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80px;
+    text-shadow: 0 0 15px black;
+    display: block;
+    width: fit-content;
+    margin: 0px auto;
+}
+
+.img_bar .Links
+{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.img_bar a
+{
+    text-decoration: none;
+    color: white;
+    margin: 30px 30px 0px 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.377);
+    outline: none;
+    color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 3px solid orange;
+    text-shadow: 0 0 5px black;
+}
+
+.img_bar a:hover
+{
+    cursor: pointer;
+    color: white;
+    background-color: orange;
+    border-color: white;
+}
+
+.img_bar span
+{
+    color: orange;
+    font-size: 90px;
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.img_bar .text
+{
+    color: white;
+    text-decoration: none;
+    font-family: 'Maiden Orange', cursive;
+    font-size: 70px;
+    letter-spacing: 9px;
+    
+}
+
+/*Offers Style*/
+.offers
+{
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.offers .box
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+    width: 49.7%;
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.offers .box h1
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid orange;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.offers img{
+    display: block;
+    margin: 10px auto;
+    height: 100px;
+    width: 100px;
+}
+
+.offers .box p
+{
+    font-size: 20px;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.offers .box a
+{
+    border: 2px solid orange;
+    padding: 10px;
+    text-decoration: none;
+    color: orange;
+    border-radius: 15px;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.offers .box a:hover
+{
+    color: white;
+    background: linear-gradient(to left, rgb(255, 202, 103), #f6d365, #f89256);
+    border: none;
+    transition: 0.4s ease;
+}
+
+.offers .box a, .offers .box p{
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+@media( max-width: 551px){
+    .offers .box
+    {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .offers .box:first-child{
+        margin-top: 0px;
+    }
+}
+
+/*Category Section Styling*/
+.categorySect
+{
+    background-color: #f5f5f5;
+    color: black;
+    padding: 30px
+}
+
+.header 
+{
+    font-size: 38px;
+    display: flex;
+    justify-content: center;
+}
+
+.header i
+{
+    color: orange;
+}
+
+.header p
+{
+    margin-left: 20px;
+}
+
+.header 
+{
+    margin: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.categories
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.categories a
+{
+    text-decoration: none;
+    color: black;
+    width: 24.7%;
+    height: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categories a:hover
+{
+    background-color: orange;
+    color: white;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.categories a:hover p
+{
+    border-top: 4px solid black;
+}
+
+.categories img
+{
+    height: 100px;
+    width: 100px;   
+    display: block;
+    margin: 0px auto; 
+}
+
+.categories p
+{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border-top: 4px solid orange;
+    padding-top: 20px;
+    width: 100px;
+    text-align: center;
+    margin: 15px auto 0px;
+} 
+
+@media (max-width: 860px){
+    .categories a
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px){
+    .categories a
+    {
+        width: 100%;
+    } 
+
+    .categories p{
+        width: 40%
+    }
+}
+
+
+
