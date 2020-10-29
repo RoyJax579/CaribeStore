@@ -1,6 +1,5 @@
-import React, {useContext, useState } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import "../CSS/Items.css"
-import Inventory from './Inventory'
 import uuid from "uuid/dist/v1"
 import { context } from '../Context/contextProvider'
 import { db } from '../Config/fbConfig'
@@ -33,115 +32,66 @@ export const ProductCategories = (parameters) => {
         id: null,
         qty:0
     })
-
     
     const finalQty = parseInt(selectedQty.qty===0?1:selectedQty.qty)
 
-    const getItems =  async () => {
-        const arrOfItems = await db
-            .collection("Inventory")
-            .get()
-            .then(snapshot => {
-                return snapshot.docs
-                .filter(x => (x.data()["Sub_Category"] === item && x.data()["Category"] === category)&&x.data())
-                .map(y => y.data())
-            })
-        
-            const mappedItems = await arrOfItems
-                .map(({ID, Item_Name, Price, ImageSrc, Quantity}) => {
-    
-                    //sets the default value for the item with that specific id
-                    const defVal = parseInt((selectedQty.id === ID)?selectedQty.qty:0)
-                    return (
-                        <React.Fragment key={uuid()}>
-                            <div className="card">
-                                <img src={ImageSrc} alt={item} />
-                                <p>{Item_Name}</p>
-                                
-                                <div className="innerBox">
-                                    <div className="dropdown">
-                                        <label htmlFor="quantity">Qty:</label>
-                                        <select id="quantity" defaultValue={defVal===0?1:defVal} onChange={e => {
-                                            e.preventDefault()
-                                            setSelectedQty({ID, qty: parseInt(e.target.value)})
-                                        }}>
-                                        {
-                                            Array(Quantity).fill().map((_, i)=> {
-                                                if(i===0){
-                                                    return <option key={uuid()} value={0}>-</option>
-                                                }else{
-                                                    return <option key={uuid()} value={i} >{i}</option>
-                                                }
-                                            })
-                                        }
-                                        </select>
-                                    </div>
-                                    <b>$ {Price}</b>
-                                </div>
-                                <button type="submit" onClick={()=> {
-                                    addToCart(ID, item, parseInt(finalQty), Price, ImageSrc, parseInt(finalQty)*parseFloat(Price))
-                                    setSelectedQty({id:null, qty: 0})
-                                }}>Add to Cart</button>
-                            </div>
-                        </React.Fragment>
-                    )
-                }) 
+    const [items, setItems] = useState([])
+
+    useEffect(()=>{
+        const getItems =  (async () => {
+            const arrOfItems = await db
+                .collection("Inventory")
+                .get()
+                .then(snapshot => {
+                    return snapshot
+                        .docs
+                        .filter(x => (x.data()["Sub_Category"] === item && x.data()["Category"] === category)&&x.data())
+                        .map(y => y.data())
+                })
             
-        console.log(mappedItems)
-        return arrOfItems
-    }
+            setItems(arrOfItems)
+        })()
+    }, [])
 
-   
+    return items
+        .map(({ID, Item_Name, Price, ImageSrc, Quantity}) => {
 
-        // console.log("other data",Info)
-    
-        // return Info
-
-    //console.log(getItems())
-
-    /* const mappedItems = arrOfItems
-            .map(({ID, Item_Name, Price, ImageSrc, Quantity}) => {
-
-                //console.table([{ID, Item_Name, Price, ImageSrc, Quantity}])
-                
-                //console.log("Function", Category)
-
-                //sets the default value for the item with that specific id
-                const defVal = parseInt((selectedQty.id === ID)?selectedQty.qty:0)
-                return (
-                    <React.Fragment key={uuid()}>
-                        <div className="card">
-                            <img src={ImageSrc} alt={item} />
-                            <p>{Item_Name}</p>
-                            
-                            <div className="innerBox">
-                                <div className="dropdown">
-                                    <label htmlFor="quantity">Qty:</label>
-                                    <select id="quantity" defaultValue={defVal===0?1:defVal} onChange={e => {
-                                        e.preventDefault()
-                                        setSelectedQty({ID, qty: parseInt(e.target.value)})
-                                    }}>
-                                    {
-                                        Array(Quantity).fill().map((_, i)=> {
-                                            if(i===0){
-                                                return <option key={uuid()} value={0}>-</option>
-                                            }else{
-                                                return <option key={uuid()} value={i} >{i}</option>
-                                            }
-                                        })
-                                    }
-                                    </select>
-                                </div>
-                                <b>$ {Price}</b>
+            //sets the default value for the item with that specific id
+            const defVal = parseInt((selectedQty.id === ID)?selectedQty.qty:0)
+            return (
+                <React.Fragment key={uuid()}>
+                    <div className="card">
+                        <img src={ImageSrc} alt={item} />
+                        <p>{Item_Name}</p>
+                        
+                        <div className="innerBox">
+                            <div className="dropdown">
+                                <label htmlFor="quantity">Qty:</label>
+                                <select id="quantity" defaultValue={defVal===0?1:defVal} onChange={e => {
+                                    e.preventDefault()
+                                    setSelectedQty({ID, qty: parseInt(e.target.value)})
+                                }}>
+                                {
+                                    Array(Quantity).fill().map((_, i)=> {
+                                        if(i===0){
+                                            return <option key={uuid()} value={0}>-</option>
+                                        }else{
+                                            return <option key={uuid()} value={i} >{i}</option>
+                                        }
+                                    })
+                                }
+                                </select>
                             </div>
-                            <button type="submit" onClick={()=> {
-                                addToCart(ID, item, parseInt(finalQty), Price, ImageSrc, parseInt(finalQty)*parseFloat(Price))
-                                setSelectedQty({id:null, qty: 0})
-                            }}>Add to Cart</button>
+                            <b>$ {Price}</b>
                         </div>
-                    </React.Fragment>
-                )
-            }) */
+                        <button type="submit" onClick={()=> {
+                            addToCart(ID, item, parseInt(finalQty), Price, ImageSrc, parseInt(finalQty)*parseFloat(Price))
+                            setSelectedQty({id:null, qty: 0})
+                        }}>Add to Cart</button>
+                    </div>
+                </React.Fragment>
+            )
+        })
 
     //return items
 
